@@ -3,9 +3,15 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Api from './Api';
 import GameList from "./GameList"
 
-const api = new Api();
 
 class App extends Component {
+
+  componentDidMount() {
+    const apiUrl = 'http://localhost:6060/games';
+    fetch(apiUrl)
+      .then((response) => response.json())
+      .then((data) => console.log('This is your data', data));
+  }
 
   render() {
 
