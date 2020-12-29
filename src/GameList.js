@@ -27,6 +27,8 @@ const GameList = () => {
             {games.map(item => (
                 <li key={item._id}>
                     <p>{item.name}</p>
+                    <p>Developer: {item.developer}</p>
+                    <p>Rating: {item.rating}</p>
                 </li>
             ))}
         </ul>
