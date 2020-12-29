@@ -33,7 +33,7 @@ import axios from 'axios';
 
 // export default App;
 
-function App() {
+const App = () => {
   const [state, setState] = useState({
     games: [],
     status: 'loading',
