@@ -10,14 +10,16 @@ const GameForm = () => {
 
     const onSubmit = (e) => {
         e.preventDefault()
-        const { name, year, rating, developer } = gameData
+        // const { name, year, rating, developer } = gameData
 
-        if (!name || !year || !rating || !developer) return
+        // if (!name || !year || !rating || !developer) return
+
+        console.log(gameData)
 
         setGameData(gameData)
 
         axios
-            .post(url, { gameData })
+            .post('http://localhost:6060/games', gameData)
             .then((res) => {
                 console.log(res)
             }).catch((error) => console.log(error))
