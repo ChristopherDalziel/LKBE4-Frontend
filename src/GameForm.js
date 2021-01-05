@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useState } from 'react'
+import "./css/GameForm.css"
 
 const GameForm = () => {
     const url = 'http://localhost:6060/games'
@@ -30,19 +31,19 @@ const GameForm = () => {
 
     return (
         <form onSubmit={onSubmit}>
-            <label htmlFor="name">Name: </label>
-            <input name="name" placeholder="Game title" onChange={handleInputChange} />
+            <label id="name" htmlFor="name">Name: </label>
+            <input type="text" name="name" placeholder="Game title" onChange={handleInputChange} />
             <br />
             <label htmlFor="year">Year: </label>
-            <input name="year" placeholder="Release year" onChange={handleInputChange} />
+            <input type="number" name="year" placeholder="Release year" onChange={handleInputChange} />
             <br />
             <label htmlFor="rating">Rating: </label>
-            <input name="rating" placeholder="Age rating" onChange={handleInputChange} />
+            <input type="text" name="rating" placeholder="Age rating" onChange={handleInputChange} />
             <br />
             <label htmlFor="developer">Developer: </label>
-            <input name="developer" placeholder="Developer" onChange={handleInputChange} />
+            <input type="text" name="developer" placeholder="Developer" onChange={handleInputChange} />
             <br />
-            <button type="submit">Submit</button>
+            <input type="submit" value="Submit"></input>
         </form>
     )
 }
