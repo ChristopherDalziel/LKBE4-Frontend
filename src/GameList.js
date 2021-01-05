@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
 const GameList = () => {
+    const url = 'http://localhost:6060/games'
     const [state, setState] = useState({
         games: [],
         status: 'loading',
         error: null
     });
-    const [url] = useState('http://localhost:6060/games')
     const { status, games } = state
 
     useEffect(() => {

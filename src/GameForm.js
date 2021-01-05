@@ -19,7 +19,7 @@ const GameForm = () => {
         setGameData(gameData)
 
         axios
-            .post('http://localhost:6060/games', gameData)
+            .post(url, gameData)
             .then((res) => {
                 console.log(res)
             }).catch((error) => console.log(error))
