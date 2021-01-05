@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import "./css/GameList.css"
 
 const GameList = () => {
     const url = 'http://localhost:6060/games'
@@ -25,8 +26,8 @@ const GameList = () => {
     } else if (status === 'resolved') {
         return <ul>
             {games.map(item => (
-                <li key={item._id}>
-                    <p>{item.name}</p>
+                <li className="game-li" key={item._id}>
+                    <p className="game-title">{item.name}</p>
                     <p>Developer: {item.developer}</p>
                     <p>Rating: {item.rating}</p>
                 </li>
