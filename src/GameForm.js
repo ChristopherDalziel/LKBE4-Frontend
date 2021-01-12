@@ -4,16 +4,17 @@ import "./css/GameForm.css"
 
 const GameForm = () => {
     const url = 'http://localhost:6060/games'
-    const config = {
+    // const config = {
 
-        mode: 'no-cors',
+    //     mode: 'no-cors',
 
-        headers: {
-            "Access-Control-Allow-Origin": "*",
-            'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
-            "Content-Type": "application/json"
-        }
-    }
+    //     headers: {
+    //         "Access-Control-Allow-Origin": "*",
+    //         'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+    //         "Content-Type": "application/json"
+    //     }
+    // }
+
     const handleInputChange = e => {
         const { name, value, year, rating, developer } = e.target
         setGameData({ ...gameData, [name]: value, [year]: value, [rating]: value, [developer]: value })
@@ -30,7 +31,7 @@ const GameForm = () => {
         setGameData(gameData)
 
         axios
-            .post(url, gameData, config)
+            .post(url, gameData)
             .then((res) => {
                 console.log(res)
             }).catch((error) => console.log(error))
