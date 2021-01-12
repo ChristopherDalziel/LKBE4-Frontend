@@ -30,6 +30,7 @@ const GameList = () => {
                     <p className="game-title">{item.name}</p>
                     <p>Developer: {item.developer}</p>
                     <p>Rating: {item.rating}</p>
+                    <p>Year: {item.releaseYear}</p>
                 </li>
             ))}
         </ul>
