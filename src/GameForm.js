@@ -3,8 +3,8 @@ import React, { useState } from 'react'
 import "./css/GameForm.css"
 
 const GameForm = () => {
-    const [gameData, setGameData] = useState({ name: '', releaseYear: 0, rating: '', developer: "" })
     const url = 'http://localhost:6060/games'
+    const [gameData, setGameData] = useState({ name: '', releaseYear: 0, rating: '', developer: "" })
 
     const handleInputChange = e => {
         const { name, value } = e.target

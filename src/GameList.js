@@ -38,6 +38,7 @@ const GameList = () => {
                     <p>Rating: {item.rating}</p>
                     <p>Year: {item.releaseYear}</p>
                     <button onClick={() => deleteById(item._id)}>Delete</button>
+                    <button>Edit</button>
                 </li>
             ))}
         </ul>
