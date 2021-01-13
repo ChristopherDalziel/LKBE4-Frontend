@@ -19,10 +19,16 @@ const GameList = () => {
             })
     }, [url])
 
+    const deleteById = (id) => {
+        axios.delete(url + `/${id}`).then(console.log(`${id} deleted`))
+    }
+
     if (status === 'loading') {
-        return <div>loading</div>
+        return <div>Loading</div>
     } else if (status === 'rejected') {
         throw console.log(status)
+    } else if (status === 'resolved' && games.length === 0) {
+        return <div>There are no games to display</div>
     } else if (status === 'resolved') {
         return <ul>
             {games.map(item => (
@@ -31,6 +37,7 @@ const GameList = () => {
                     <p>Developer: {item.developer}</p>
                     <p>Rating: {item.rating}</p>
                     <p>Year: {item.releaseYear}</p>
+                    <button onClick={() => deleteById(item._id)}>Delete</button>
                 </li>
             ))}
         </ul>
