@@ -3,12 +3,11 @@ import React, { useState } from 'react'
 import "./css/GameForm.css"
 
 const GameForm = () => {
-    const [gameData, setGameData] = useState({ name: '', year: 0, rating: '', developer: "" })
+    const [gameData, setGameData] = useState({ name: '', releaseYear: 0, rating: '', developer: "" })
     const url = 'http://localhost:6060/games'
 
     const handleInputChange = e => {
         const { name, value } = e.target
-
         setGameData({ ...gameData, [name]: value })
     }
 
@@ -35,7 +34,7 @@ const GameForm = () => {
                     // Something happened in setting up the request that triggered an Error
                     console.log("Error: ", error.message);
                 }
-                console.log(error.config);
+                console.log("error config: ", error.config);
             });
     }
 
@@ -44,8 +43,8 @@ const GameForm = () => {
             <label id="name" htmlFor="name">Name: </label>
             <input type="text" name="name" placeholder="Game title" onChange={handleInputChange} />
             <br />
-            <label htmlFor="year">Year: </label>
-            <input type="number" name="year" placeholder="Release year" onChange={handleInputChange} />
+            <label htmlFor="releaseYear">Year: </label>
+            <input type="number" name="releaseYear" placeholder="Release year" onChange={handleInputChange} />
             <br />
             <label htmlFor="rating">Rating: </label>
             <input type="text" name="rating" placeholder="Age rating" onChange={handleInputChange} />
