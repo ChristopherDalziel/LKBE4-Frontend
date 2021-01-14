@@ -20,7 +20,7 @@ const GameList = () => {
     }, [url])
 
     const deleteById = (id) => {
-        axios.delete(url + `/${id}`).then(console.log(`${id} deleted`))
+        axios.delete(url + `/${id}`)
     }
 
     if (status === 'loading') {
