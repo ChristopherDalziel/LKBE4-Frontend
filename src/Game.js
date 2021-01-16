@@ -4,7 +4,7 @@ import axios from 'axios'
 const Game = ({ games }) => {
 
     const deleteById = (id) => {
-        axios.delete(process.env.REACT_APP_URL + `/${id}`)
+        axios.delete(process.env.REACT_APP_URL + `/${id}`).then((res) => console.log(res))
     }
 
     return (

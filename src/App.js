@@ -4,23 +4,27 @@ import GameForm from './GameForm';
 import GameList from './GameList';
 
 const App = () => {
-  const [state, setState] = useState({
-    games: [],
-    status: 'loading',
-    error: null
-  });
+  // const [state, setState] = useState({
+  //   games: [],
+  //   status: 'loading',
+  //   error: null
+  // });
 
-  useEffect(() => {
-    axios
-      .get(process.env.REACT_APP_URL)
-      .then((res) => {
-        setState({ status: 'resolved', games: res.data })
-      })
-  }, [])
+  // function getReq() {
+  //   axios
+  //     .get(process.env.REACT_APP_URL)
+  //     .then((res) => {
+  //       setState({ status: 'resolved', games: res.data })
+  //     })
+  // }
+
+  // useEffect(() => {
+  //   getReq()
+  // }, [])
 
   return (
     <>
-      <GameList props={state} />
+      <GameList />
       <GameForm />
     </>
   )
