@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import GameForm from '../GameForm'
+import GameForm from '../components/GameForm'
 
 const Edit = (props) => {
     const [gameData, setGameData] = useState('')

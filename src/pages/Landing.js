@@ -1,6 +1,6 @@
-import React from 'react';
-import GameForm from '../GameForm';
-import GameList from '../GameList';
+import React from 'react'
+import GameForm from '../components/GameForm'
+import GameList from '../components/GameList'
 
 const Landing = () => {
   return (

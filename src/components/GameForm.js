@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useState } from 'react'
-import "./css/GameForm.css"
+import "../css/GameForm.css"
 
 const GameForm = (props = "") => {
     const [gameData, setGameData] = useState(props.gameData ? props.gameData : { name: "", releaseYear: 0, rating: '', developer: "" })

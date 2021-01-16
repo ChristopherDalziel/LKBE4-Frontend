@@ -1,0 +1,13 @@
+.navButton { 
+    background-color: black;
+    padding: 5px;
+    margin: 3px;
+    color: white;
+    text-decoration: none;
+}
+
+.navButton:hover {
+    background-color: white;
+    color: black;
+    outline: 2px solid black;
+}
