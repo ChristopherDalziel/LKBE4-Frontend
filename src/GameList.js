@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import "./css/GameList.css"
-import Game from "./Game"
+import { Link } from 'react-router-dom'
 
 const GameList = () => {
-
     const [state, setState] = useState({
         games: [],
         status: 'loading',
         error: null
     });
 
-    function getAll() {
+    const getAll = () => {
         setState({ status: 'loading' })
         axios
             .get(process.env.REACT_APP_URL)
@@ -48,14 +47,12 @@ const GameList = () => {
                         <p>Rating: {item.rating}</p>
                         <p>Year: {item.releaseYear}</p>
                         <button onClick={() => deleteById(item._id)}>Delete</button>
-                        <button>Edit</button>
+                        <Link to={item._id}><button>Edit</button></Link>
                     </li>
                 ))}
             </ul>
         )
-
     }
-
 }
 
 export default GameList
