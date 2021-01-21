@@ -21,7 +21,7 @@ const GameList = () => {
 
     const deleteById = (id) => {
         axios.delete(process.env.REACT_APP_URL + `/${id}`).then(
-            getAll()
+            setState({ status: 'resolved', games: state.games.filter(game => game._id !== id) })
         )
     }
 

@@ -2,16 +2,20 @@ import axios from 'axios'
 import React, { useState } from 'react'
 import "../css/GameForm.css"
 
+// ** GO OVER SOME EPIC/REACT ABOUT CONTROLLED / UNCONTROLED INPUTS 
+// REMOVE STATE TO CREATE 'DUMB' COMPONENTS - PASS LOGIC IN
+
 const GameForm = (props = "") => {
     const [gameData, setGameData] = useState(props.gameData ? props.gameData : { name: "", releaseYear: 0, rating: '', developer: "" })
 
     const handleInputChange = e => {
         const { name, value } = e.target
-        console.log('handle input change', gameData)
         setGameData(props.gameData ? { ...props.gameData, [name]: value } : { ...gameData, [name]: value })
     }
 
     const onSubmit = e => {
+        // Controlled v uncontrolled inputs
+        // const { name, value } = e.target
         e.preventDefault()
         axios
             .post(process.env.REACT_APP_URL, gameData)
@@ -64,7 +68,7 @@ const GameForm = (props = "") => {
         <form onSubmit={props.gameData ? onUpdate : onSubmit}>
             {props.gameData ?
                 <><label id="_id" htmlFor="_id">ID: </label> <br />
-                    <input type="text" name="_id" value={props.gameData._id} onChange={handleInputChange} /> </>
+                    <input type="text" name="_id" value={props.gameData._id} /> </>
                 : ''}
             <br />
             <label id="name" htmlFor="name">Name: </label>
