@@ -25,9 +25,9 @@ const GameList = () => {
         )
     }
 
-    useEffect(() => {
-        getAll()
-    }, [])
+    // useEffect(() => {
+    //     getAll()
+    // }, [])
 
     const { games, status } = state
 
