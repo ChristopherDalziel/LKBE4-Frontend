@@ -2,10 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import AppRouter from "./routers/AppRouter"
 import reportWebVitals from './reportWebVitals';
+import { GameProvider } from "./context/gameContext"
 
 ReactDOM.render(
   <React.StrictMode>
-    <AppRouter />
+    <GameProvider>
+      <AppRouter />
+    </GameProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,4 +1,10 @@
-export const gameReducer = (state, action) => {
+export const initialState = {
+    status: 'idle',
+    games: [],
+    error: null,
+}
+
+export const gameReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'loading': {
             return { status: 'loading', games: [], error: null }
