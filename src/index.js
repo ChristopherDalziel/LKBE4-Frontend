@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import AppRouter from "./routers/AppRouter"
+import AppRouter from "./presentation/routers/AppRouter"
 import reportWebVitals from './reportWebVitals';
-import { GameProvider } from "./context/gameContext"
+import { GameProvider } from "./presentation/context/gameContext"
 
 ReactDOM.render(
   <React.StrictMode>

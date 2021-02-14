@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import "../css/GameForm.css"
+import "../../css/GameForm.css"
 
 const GameForm = ({ onGameChange, onGameSubmit }) => {
     return (

@@ -2,7 +2,6 @@ import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Landing from '../pages/Landing'
 import Edit from "../pages/Edit"
-
 import Nav from '../components/Nav'
 
 const AppRouter = () => {
