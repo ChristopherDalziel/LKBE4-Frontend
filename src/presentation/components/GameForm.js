@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import "../../css/GameForm.css"
 
 const GameForm = ({ onGameChange, onGameSubmit }) => {
+    // console.log('Game Form Props =>', props)
     return (
         <form onSubmit={onGameSubmit}>
             {/* {props.gameData ?
